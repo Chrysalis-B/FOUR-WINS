@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to right, #e1fdea, #fce5ec);
+}
+
+.board {
+    display: flex;
+    width: 560px;
+    margin: 10px auto 0 auto;
+    position: relative;
+}
+
+.mascot {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+    animation-name: winmascot;
+    animation-duration: 2s;
+}
+
+@keyframes winmascot {
+    from {
+        font-size: 200px;
+    }
+    to {
+        font-size: 35px;
+    }
+}
+
+.rules {
+    width: 250px;
+    height: 200px;
+    background: rgba(76, 175, 80, 0);
+    border: 3px dotted black;
+    position: relative;
+    float: left;
+    margin-left: 40px;
+    font-family: Courier;
+    bottom: 550px;
+}
+
+.rules-inner {
+    padding: 15px;
+}
+
+.rules h1 {
+    text-align: center;
+    margin-bottom: 23px;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+.rules p {
+    margin-bottom: 30px;
+}
+
+.avatar1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #eae1fd;
+    position: relative;
+    float: right;
+    bottom: 65px;
+    right: 20px;
+    border: 1px solid black;
+}
+
+.avatar2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #fbddeb;
+    position: relative;
+    float: right;
+    bottom: 65px;
+    right: 20px;
+    border: 1px solid black;
+}
+
+.win {
+    display: none;
+    width: 250px;
+    height: 300px;
+    background: rgba(76, 175, 80, 0);
+    border: 3px dotted black;
+    position: relative;
+    float: left;
+    margin-left: 40px;
+    bottom: 525px;
+    font-family: Courier;
+    z-index: 10;
+    clear: left;
+}
+
+.win-inner {
+    padding: 15px;
+}
+
+.win-declaration {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+button {
+    width: 220px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: Courier;
+    color: black;
+    background-color: white;
+    margin-top: 30px;
+    border: 1px solid black;
+}
+
+.empty {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border-bottom: 3px dotted #ffc3ed;
+    border-left: 3px dotted #ff88dc;
+    position: relative;
+}
+
+.slot {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.hole,
+.permanent-hole {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    background-color: white;
+}
+
+.hole {
+    z-index: 5;
+}
+
+.slot.player1 .hole {
+    background-color: #eae1fd;
+}
+
+.slot.player2 .hole {
+    background-color: #fbddeb;
+}
+
+.empty.player1 .hole {
+    background-color: #eae1fd;
+}
+
+.empty.player2 .hole {
+    background-color: #fbddeb;
+}
+
+.fall {
+    transform: translateY(869px);
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+}
+
+.victory {
+    box-shadow: 0px 0px 20px 5px #dcdcdc;
+    animation-name: victorytokens;
+    animation-duration: 0.5s;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+}
+
+@keyframes victorytokens {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 0px 0px 20px 5px #dcdcdc;
+    }
+}
